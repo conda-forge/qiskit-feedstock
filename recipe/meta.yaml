@@ -1,5 +1,5 @@
 {% set name = "qiskit" %}
-{% set version = "0.44.2" %}
+{% set version = "0.44.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/qiskit-{{ version }}.tar.gz
-  sha256: cc25f4dd1ef4b93966167a73e93fce417e5245c0fe2fd54cd1ac8da1faeafd89
+  sha256: bc3447fda682cff5789125b51936450781bd9a73b817db8610f23ba16c1b8912
 
 build:
   noarch: python
@@ -20,7 +20,7 @@ requirements:
     - pip
   run:
     - python >=3.8
-    - qiskit-terra ==0.25.2.1
+    - qiskit-terra ==0.25.3
 
 test:
   imports:
