@@ -11,6 +11,9 @@ source:
   sha256: 0ae9186abe5e0948cb241ab507ab84a389556417dc8d634ddae047c21c269dd2
 
 build:
+  ignore_run_exports:
+    # Qiskit uses the Python stable C API/ABI and does not link to libpython
+    - python
   number: 0
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
