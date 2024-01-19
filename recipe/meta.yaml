@@ -44,6 +44,7 @@ requirements:
     - python-dateutil >=2.8.0
     - stevedore >=3.0.0
     - python-symengine >=0.9,!=0.10
+    - zstd  # Temporary workaround for https://github.com/conda-forge/python-symengine-feedstock/issues/50
   run_constrained:
     - matplotlib >=3.3
     - matplotlib-base >=3.3
