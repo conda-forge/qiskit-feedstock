@@ -1,5 +1,5 @@
 {% set name = "qiskit" %}
-{% set version = "1.0.0b1" %}
+{% set version = "1.0.0rc1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/qiskit-{{ version }}.tar.gz
-  sha256: 0ae9186abe5e0948cb241ab507ab84a389556417dc8d634ddae047c21c269dd2
+  sha256: 5b141693be331667500dcdf7ee36152128c295634f523cd64cc7305450b0d0ac
 
 build:
   ignore_run_exports:
@@ -34,7 +34,7 @@ requirements:
     - wheel
   run:
     - typing-extensions  # [py<311]
-    - rustworkx >=0.13.0
+    - rustworkx >=0.14.0
     - python
     - numpy >=1.17,<2
     - psutil >=5
@@ -43,7 +43,7 @@ requirements:
     - dill >=0.3
     - python-dateutil >=2.8.0
     - stevedore >=3.0.0
-    - python-symengine >=0.9,!=0.10
+    - python-symengine >=0.11
     - zstd  # Temporary workaround for https://github.com/conda-forge/python-symengine-feedstock/issues/50
   run_constrained:
     - matplotlib >=3.3
