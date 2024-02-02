@@ -33,7 +33,7 @@ requirements:
     - setuptools-rust
     - wheel
   run:
-    - typing-extensions  # [py<311]
+    - typing-extensions
     - rustworkx >=0.14.0
     - python
     - numpy >=1.17,<2
