@@ -1,5 +1,5 @@
 {% set name = "qiskit" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/qiskit-{{ version }}.tar.gz
-  sha256: 21d92f8a8d88f7cfb364b58132f2beb7d5b49d585b1fde32c67c6658ae9da072
+  sha256: c549383fc057c11eb1dcf89949fe751800797d149ef0115c40e406d9718d9d31
 
 build:
   ignore_run_exports:
     # Qiskit uses the Python stable C API/ABI and does not link to libpython
     - python
-  number: 1
+  number: 0
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv
@@ -35,7 +35,7 @@ requirements:
     - typing-extensions
     - rustworkx >=0.14.0
     - python
-    - numpy >=1.17,<2
+    - numpy <2,>=1.17
     - scipy >=1.5
     - sympy >=1.3
     - dill >=0.3
