@@ -13,7 +13,7 @@ build:
   ignore_run_exports:
     # Qiskit uses the Python stable C API/ABI and does not link to libpython
     - python
-  number: 0
+  number: 1
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv
@@ -43,7 +43,6 @@ requirements:
     - python-dateutil >=2.8.0
     - stevedore >=3.0.0
     - python-symengine >=0.11
-    - zstd  # Temporary workaround for https://github.com/conda-forge/python-symengine-feedstock/issues/50
   run_constrained:
     - matplotlib >=3.3
     - matplotlib-base >=3.3
