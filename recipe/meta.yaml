@@ -1,5 +1,5 @@
 {% set name = "qiskit" %}
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/qiskit-{{ version }}.tar.gz
-  sha256: d4d0310029659711dca6b9c0cc593e1b33daf059e52ba221267f85bb47f1bf4e
+  sha256: 5f1af6a1d94b92aa8c15007b626b76aeb5873a59ff53cb40d1f3662abd50c2cc
 
 build:
   ignore_run_exports:
     # Qiskit uses the Python stable C API/ABI and does not link to libpython
     - python
-  number: 1
+  number: 0
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv
