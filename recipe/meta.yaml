@@ -1,5 +1,5 @@
 {% set name = "qiskit" %}
-{% set version = "1.1.2" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/qiskit-{{ version }}.tar.gz
-  sha256: 6e1d46756e064d9160432405f96f6116ba3ad2639f707328ab33edb286197fdf
+  sha256: 7d95413c833033425a392377f562a7f3b5b6cd8284e978dddd9b23db1093ded0
 
 build:
   ignore_run_exports:
@@ -34,7 +34,7 @@ requirements:
     - wheel
   run:
     - typing-extensions
-    - rustworkx >=0.14.0
+    - rustworkx >=0.15.0
     - python
     - numpy <3,>=1.17
     - scipy >=1.5
