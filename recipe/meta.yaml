@@ -1,5 +1,5 @@
 {% set name = "qiskit" %}
-{% set version = "1.2.0" %}
+{% set version = "1.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/qiskit-{{ version }}.tar.gz
-  sha256: 7d95413c833033425a392377f562a7f3b5b6cd8284e978dddd9b23db1093ded0
+  sha256: da69c84ab052416af35a43f0695845797de6d3207760354b7c8c8b93cbb19f47
 
 build:
   ignore_run_exports:
