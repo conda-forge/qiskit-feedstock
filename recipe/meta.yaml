@@ -62,9 +62,9 @@ test:
     - pip
 
 about:
-  home: https://qiskit.org/
-  summary: Software for developing quantum computing programs
-  doc_url: https://qiskit.org/documentation/index.html
+  home: https://www.ibm.com/quantum/qiskit
+  summary: SDK for working with quantum computers at the level of extended quantum circuits, operators, and primitives.
+  doc_url: https://docs.quantum.ibm.com
   dev_url: https://github.com/Qiskit/qiskit
   license: Apache-2.0
   license_file:
