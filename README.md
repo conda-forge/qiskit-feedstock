@@ -3,15 +3,15 @@ About qiskit-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/qiskit-feedstock/blob/main/LICENSE.txt)
 
-Home: https://qiskit.org/
+Home: https://www.ibm.com/quantum/qiskit
 
 Package license: Apache-2.0
 
-Summary: Software for developing quantum computing programs
+Summary: SDK for working with quantum computers at the level of extended quantum circuits, operators, and primitives
 
 Development: https://github.com/Qiskit/qiskit
 
-Documentation: https://qiskit.org/documentation/index.html
+Documentation: https://docs.quantum.ibm.com
 
 Current build status
 ====================
