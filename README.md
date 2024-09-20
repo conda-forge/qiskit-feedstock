@@ -7,7 +7,7 @@ Home: https://www.ibm.com/quantum/qiskit
 
 Package license: Apache-2.0
 
-Summary: SDK for working with quantum computers at the level of extended quantum circuits, operators, and primitives
+Summary: SDK for working with quantum computers at the level of extended quantum circuits, operators, and primitives.
 
 Development: https://github.com/Qiskit/qiskit
 
