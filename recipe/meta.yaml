@@ -1,5 +1,5 @@
 {% set name = "qiskit" %}
-{% set version = "1.2.2" %}
+{% set version = "1.2.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/qiskit-{{ version }}.tar.gz
-  sha256: e16dd0f99de8caaec85a6620fccc9acf3ac2c9368f465e4d9e7ab445d3c7428a
+  sha256: 3f30b1fc6c66dec240428991da75cc6c35cc75152baff8daf3f8ca71b60684e8
 
 build:
   ignore_run_exports:
     # Qiskit uses the Python stable C API/ABI and does not link to libpython
     - python
-  number: 1
+  number: 0
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv
@@ -33,6 +33,7 @@ requirements:
     - setuptools-rust
     - wheel
   run:
+    - typing_extensions
     - typing-extensions
     - rustworkx >=0.15.0
     - python
@@ -42,7 +43,7 @@ requirements:
     - dill >=0.3
     - python-dateutil >=2.8.0
     - stevedore >=3.0.0
-    - python-symengine >=0.11
+    - python-symengine <0.14,>=0.11
   run_constrained:
     - matplotlib >=3.3
     - matplotlib-base >=3.3
