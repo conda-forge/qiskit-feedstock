@@ -13,10 +13,11 @@ build:
   ignore_run_exports:
     # Qiskit uses the Python stable C API/ABI and does not link to libpython
     - python
-  number: 0
+  number: 1
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv
+  skip: True  # [py<39]
 
 requirements:
   build:
@@ -34,7 +35,6 @@ requirements:
     - wheel
   run:
     - typing_extensions
-    - typing-extensions
     - rustworkx >=0.15.0
     - python
     - numpy <3,>=1.17
