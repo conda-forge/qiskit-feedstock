@@ -13,7 +13,7 @@ build:
   ignore_run_exports:
     # Qiskit uses the Python stable C API/ABI and does not link to libpython
     - python
-  number: 0
+  number: 1
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv
@@ -61,6 +61,9 @@ test:
     - pip check
   requires:
     - pip
+    # Temporary workaround for missing dependency of pbr which is a dependency of stevedore
+    # Can be removed after https://github.com/conda-forge/pbr-feedstock/pull/53 is merged
+    - setuptools
 
 about:
   home: https://www.ibm.com/quantum/qiskit
