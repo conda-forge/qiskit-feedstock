@@ -1,7 +1,7 @@
 context:
   name: qiskit
   python_name: qiskit
-  version: "2.0.1"
+  version: "2.0.2"
   python_min: "3.9"
 
 package:
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/qiskit-${{ version }}.tar.gz
-  sha256: c48b44501eeec09885c1df8bdb2471b6f2732b836f59cd20085544aef2a2dcf8
+  sha256: 4901496df2d891c8b1b3d79f5b255da6343153cc7dcee1e2caae95be58b8b354
 
 build:
-  number: 1
+  number: 0
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - ${{ PYTHON }} -m pip install . -vv
@@ -25,8 +25,8 @@ requirements:
   build:
     - if: build_platform != target_platform
       then:
-      - python
-      - cross-python_${{ target_platform }}
+        - python
+        - cross-python_${{ target_platform }}
     - ${{ compiler('c') }}
     - ${{ stdlib('c') }}
     - ${{ compiler('rust') }}
@@ -61,7 +61,7 @@ tests:
   - python:
       imports:
         - qiskit
-      python_version: ["${{ python_min ~ '.*' }}"]  
+      python_version: ["${{ python_min ~ '.*' }}"]
   - script:
       - pip check
     requirements:
