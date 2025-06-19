@@ -13,7 +13,7 @@ source:
   sha256: b25233d547779cbb4ee384548e0c5525599212140ceb371879b735b20df5fc9e
 
 build:
-  number: 0
+  number: 1
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - ${{ PYTHON }} -m pip install . -vv
@@ -41,12 +41,9 @@ requirements:
     - dill >=0.3
     - numpy <3,>=1.17
     - python
-    - python-dateutil >=2.8.0
-    - python-symengine <0.14,>=0.11
     - rustworkx >=0.15.0
     - scipy >=1.5
     - stevedore >=3.0.0
-    - sympy >=1.3
     - typing_extensions
 
   run_constraints:
@@ -55,7 +52,15 @@ requirements:
     - pillow >=4.2.1
     - pylatexenc >=1.4
     - python-constraint >=1.4
+    # Technically, Qiskit has a <0.14 constraint, but symengine is only used
+    # for loading old files saved in the qpy format and it seems better not to
+    # impede users using symengine for other use cases in the same environment
+    # as Qiskit than to support loading old qpy files (the user can still
+    # manually install symengine <0.14 if needed; this is just about not
+    # preventing the user from using a newer version).
+    - python-symengine >=0.11
     - seaborn >=0.9.0
+    - sympy >=1.3
 
 tests:
   - python:
@@ -71,7 +76,7 @@ tests:
 about:
   homepage: https://www.ibm.com/quantum/qiskit
   summary: SDK for working with quantum computers at the level of extended quantum circuits, operators, and primitives.
-  documentation: https://docs.quantum.ibm.com
+  documentation: https://quantum.cloud.ibm.com/docs/en/guides
   repository: https://github.com/Qiskit/qiskit
   license: Apache-2.0
   license_file:
