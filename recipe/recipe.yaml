@@ -80,7 +80,7 @@ about:
   repository: https://github.com/Qiskit/qiskit
   license: Apache-2.0
   license_file:
-    - LICENSE
+    - LICENSE.txt
     - THIRDPARTY.yml
 
 extra:
