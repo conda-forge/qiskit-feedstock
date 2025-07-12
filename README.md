@@ -11,7 +11,7 @@ Summary: SDK for working with quantum computers at the level of extended quantum
 
 Development: https://github.com/Qiskit/qiskit
 
-Documentation: https://docs.quantum.ibm.com/
+Documentation: https://quantum.cloud.ibm.com/docs/en/guides
 
 Current build status
 ====================
