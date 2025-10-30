@@ -1,7 +1,7 @@
 context:
   name: qiskit
   python_name: qiskit
-  version: "2.2.2"
+  version: "2.2.3"
 
 package:
   name: qiskit
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/qiskit-${{ version }}.tar.gz
-  sha256: 5e2e2693e568451eaff0a13d48054f0c928e7d852c9157ec0c5c424a7bd66c01
+  sha256: ec597bf021fe5fa5e44600b142e6de00fc873207dfbd750d4e1cf19a1a905592
 
 build:
   number: 0
