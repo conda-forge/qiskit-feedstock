@@ -1,7 +1,7 @@
 context:
   name: qiskit
   python_name: qiskit
-  version: "2.3.0"
+  version: 2.3.1
 
 package:
   name: qiskit
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/qiskit-${{ version }}.tar.gz
-  sha256: e0a00c6681b8d04171c5cdb928837d992676f8aa4a07c390d446e54babaf6c1e
+  sha256: 7b3b7e1c8a50f7f423204143a1bd9f21bf27659c57459d582eaff4035d8d7f75
 
 build:
   number: 0
@@ -38,13 +38,12 @@ requirements:
     - setuptools-rust
   run:
     - dill >=0.3
-    - numpy <3,>=1.17
+    - numpy <3,>=1.21
     - python
     - rustworkx >=0.15.0
     - scipy >=1.5
     - stevedore >=3.0.0
     - typing_extensions
-
   run_constraints:
     - matplotlib >=3.3
     - matplotlib-base >=3.3
