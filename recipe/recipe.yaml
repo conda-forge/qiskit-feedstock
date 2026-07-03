@@ -1,7 +1,7 @@
 context:
   name: qiskit
   python_name: qiskit
-  version: "2.4.2"
+  version: 2.5.0
 
 package:
   name: qiskit
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/qiskit-${{ version }}.tar.gz
-  sha256: b9844e28336fdbed0d53f8cf82a681d0365574dd68d04ef877d1619971462ad6
+  sha256: c65c46ee30b15e38b1359ef8a1d0bf98383416d59780572e46e8fddf8a4b3efe
 
 build:
   number: 0
@@ -38,10 +38,10 @@ requirements:
     - setuptools-rust
   run:
     - dill >=0.3
-    - numpy <3,>=1.21
+    - numpy <3,>=2.0
     - python
     - rustworkx >=0.15.0
-    - scipy >=1.5
+    - scipy >=1.14
     - stevedore >=3.0.0
     - typing_extensions
   run_constraints:
