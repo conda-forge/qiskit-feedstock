@@ -77,8 +77,8 @@ tests:
         - abi3audit
     script:
       - if: unix
-        then: abi3audit $SP_DIR/mypackage.abi3.so -s -v --assume-minimum-abi3 ${{ python_min }}
-        else: abi3audit %SP_DIR%/mypackage.pyd -s -v --assume-minimum-abi3 ${{ python_min }}
+        then: abi3audit $SP_DIR/qiskit/_accelerate.abi3.so -s -v --assume-minimum-abi3 ${{ python_min }}
+        else: abi3audit %SP_DIR%/qiskit/_accelerate.pyd -s -v --assume-minimum-abi3 ${{ python_min }}
 
 about:
   homepage: https://www.ibm.com/quantum/qiskit
