@@ -12,7 +12,7 @@ source:
   sha256: 84060e4ce0b8bc89cec90b68541d9eac754ea19fdc4b71d060e020b5896124aa
 
 build:
-  number: 0
+  number: 1
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - ${{ PYTHON }} -m pip install . -vv
@@ -34,8 +34,8 @@ requirements:
     - pip
     - python
     - python-abi3
-    - setuptools
-    - setuptools-rust
+    - setuptools >=77.0
+    - setuptools-rust >=1.13.0
   run:
     - dill >=0.3
     - numpy <3,>=2.0
@@ -64,12 +64,21 @@ tests:
   - python:
       imports:
         - qiskit
-      python_version: ["${{ python_min ~ '.*' }}"]
+      python_version:
+        - "${{ python_min ~ '.*' }}"
+        - "*"
   - script:
       - pip check
     requirements:
       run:
         - pip
+  - requirements:
+      run:
+        - abi3audit
+    script:
+      - if: unix
+        then: abi3audit $SP_DIR/qiskit/_accelerate.abi3.so -s -v --assume-minimum-abi3 ${{ python_min }}
+        else: abi3audit %SP_DIR%/qiskit/_accelerate.pyd -s -v --assume-minimum-abi3 ${{ python_min }}
 
 about:
   homepage: https://www.ibm.com/quantum/qiskit
