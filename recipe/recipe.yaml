@@ -1,7 +1,7 @@
 context:
   name: qiskit
   python_name: qiskit
-  version: "2.6.0"
+  version: "2.6.1"
 
 package:
   name: qiskit
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/qiskit-${{ version }}.tar.gz
-  sha256: 84060e4ce0b8bc89cec90b68541d9eac754ea19fdc4b71d060e020b5896124aa
+  sha256: 3e915793167541b4045665230421785485d4dfd845ce5050a41bc9aa4868a906
 
 build:
-  number: 1
+  number: 0
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - ${{ PYTHON }} -m pip install . -vv
